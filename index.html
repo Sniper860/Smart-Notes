@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Notes</title>
+  <!-- Soft font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Smart Notes</h1>
+      <div class="header-buttons">
+        <button id="themeToggle">🌙</button>
+        <button id="sidebarToggle">☰</button>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <div class="note-actions">
+        <input type="text" id="noteTitle" placeholder="Note Title" />
+        <button id="newNoteBtn">New Note</button>
+      </div>
+      <textarea id="note" placeholder="Write your note here..."></textarea>
+      <div class="info-bar">
+        <span id="wordCount">Words: 0</span>
+        <span id="charCount">Characters: 0</span>
+        <span id="lastSaved">Last saved: --</span>
+      </div>
+      <div class="buttons">
+        <button id="clearBtn">🗑️ Clear</button>
+        <button id="saveBtn">💾 Save</button>
+        <button id="exportBtn">📄 Export</button>
+        <button id="speechBtn">🎤 Voice</button>
+        <button id="backupBtn">⏳ Restore</button>
+        <button id="zenMode">🧘 Zen</button>
+        <button id="pinBtn">📌 Pin</button>
+        <button id="deleteBtn">🗑️ Delete</button>
+      </div>
+    </div>
+
+    <!-- Sidebar (inside container) -->
+    <div id="sidebar" class="sidebar">
+      <div class="sidebar-menu">
+        <button class="sidebar-tab active" data-tab="history">History</button>
+        <button class="sidebar-tab" data-tab="pinned">Pinned</button>
+        <button class="sidebar-tab" data-tab="trash">Trash</button>
+      </div>
+      <input type="text" id="sidebarSearch" placeholder="Search notes..." />
+      <div id="sidebarContent" class="notes-list"></div>
+    </div>
+
+    <!-- Overlay for dimming/blur effect -->
+    <div id="overlay" class="overlay"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
